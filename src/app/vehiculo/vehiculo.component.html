@@ -1,25 +1,21 @@
-<div class="container-fluid">
-  <div class="col-6">
-    <table class="table">
-      <thead>
+<div class="container-fluid my-4">
+  <div class="col-10 mx-auto">
+    <table class="table table-bordered table-striped shadow-sm">
+      <thead class="table-dark">
         <tr>
-          <th class="h4">Marca</th>
-          <th class="h4">Línea</th>
-          <th class="h4">Modelo</th>
+          <th scope="col" class="text-center">#</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Línea</th>
+          <th scope="col">Modelo</th>
         </tr>
-        <tr *ngFor="let c of vehiculos">
-          <td>
-            <dd>{{c.marca}}</dd>
-          </td>
-          <td>
-            <dd>{{c.linea}}</dd>
-          </td>
-          <td>
-            <dd>{{c.modelo}}</dd>
-          </td>
-      </tr>
       </thead>
       <tbody>
+        <tr *ngFor="let c of vehiculos; let i = index">
+          <td class="text-center">{{ i + 1 }}</td>
+          <td>{{ c.marca }}</td>
+          <td>{{ c.linea }}</td>
+          <td>{{ c.modelo }}</td>
+        </tr>
       </tbody>
     </table>
   </div>

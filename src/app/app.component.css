@@ -1,0 +1,24 @@
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.text-primary {
+  color: #004aad !important;
+}
+
+.table-dark th {
+  background-color: #004aad !important;
+  color: white !important;
+}
+
+h4 {
+  font-weight: 600;
+}
