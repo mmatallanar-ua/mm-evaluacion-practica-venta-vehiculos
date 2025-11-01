@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Vehiculo } from './vehiculo';
+import { VehiculoService } from './vehiculo.service';
 
 @Component({
   selector: 'app-listar-vehiculo',
@@ -7,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   standalone: false
 })
 export class VehiculoComponent implements OnInit {
+  vehiculos: Vehiculo[] = [];
 
-  constructor() { }
+  constructor(private vehiculoService: VehiculoService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getVehiculos();
   }
 
+  getVehiculos(): void {
+    this.vehiculoService.getVehiculos().subscribe(data => {
+      console.log(data);
+      this.vehiculos = data;
+    });
+  }
+
+
 }
+
+
